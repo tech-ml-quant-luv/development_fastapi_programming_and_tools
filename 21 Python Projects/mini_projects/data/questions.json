@@ -1,0 +1,22 @@
+[
+  {
+    "question": "A CPU is the main processor of a computer. True or False?",
+    "answer": "true"
+  },
+  {
+    "question": "GPU stands for General Processing Unit. True or False?",
+    "answer": "false"
+  },
+  {
+    "question": "RAM is a type of temporary memory. True or False?",
+    "answer": "true"
+  },
+  {
+    "question": "A PSU converts AC power to DC power in a computer. True or False?",
+    "answer": "true"
+  },
+  {
+    "question": "An SSD uses spinning disks to store data. True or False?",
+    "answer": "false"
+  }
+]
