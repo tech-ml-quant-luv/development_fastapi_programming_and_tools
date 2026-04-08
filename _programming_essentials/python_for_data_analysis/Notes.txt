@@ -1,0 +1,70 @@
+When I say “data,” what am I referring to exactly? The primary focus is on structured
+data, a deliberately vague term that encompasses many different common forms of
+data, such as:
+1
+• Tabular or spreadsheet-like data in which each column may be a different type•
+(string, numeric, date, or otherwise). This includes most kinds of data commonly
+stored in relational databases or tab- or comma-delimited text files.
+• Multidimensional arrays (matrices).•
+• Multiple tables of data interrelated by key columns (what would be primary or•
+foreign keys for a SQL user).
+• Evenly or unevenly spaced time series.•
+This is by no means a complete list. Even though it may not always be obvious, a
+large percentage of datasets can be transformed into a structured form that is more
+suitable for analysis and modeling. If not, it may be possible to extract features from
+a dataset into a structured form. As an example, a collection of news articles could
+be processed into a word frequency table, which could then be used to perform
+sentiment analysis.
+
+
+For many people, the Python programming language has strong appeal. Since its
+first appearance in 1991, Python has become one of the most popular interpreted
+programming languages, along with Perl, Ruby, and others. Python and Ruby have
+become especially popular since 2005 or so for building websites using their numer‐
+ous web frameworks, like Rails (Ruby) and Django (Python). Such languages are
+often called scripting languages, as they can be used to quickly write small programs,
+or scripts to automate other tasks. I don’t like the term “scripting languages,” as it
+carries a connotation that they cannot be used for building serious software. Among
+interpreted languages, for various historical and cultural reasons, Python has devel‐
+oped a large and active scientific computing and data analysis community. In the last
+20 years, Python has gone from a bleeding-edge or “at your own risk” scientific com‐
+puting language to one of the most important languages for data science, machine
+learning, and general software development in academia and industry.
+
+I believe that
+more and more companies will go down this path, as there are often significant
+organizational benefits to having both researchers and software engineers using the
+same set of programming tools.
+
+Over the last decade some new approaches to solving the “two-language” problem
+have appeared, such as the Julia programming language. Getting the most out of
+Python in many cases will require programming in a low-level language like C or
+C++ and creating Python bindings to that code. That said, “just-in-time” (JIT) com‐
+piler technology provided by libraries like Numba have provided a way to achieve
+excellent performance in many computational algorithms without having to leave the
+Python programming environment.
+
+Why Not Python?
+While Python is an excellent environment for building many kinds of analytical
+applications and general-purpose systems, there are a number of uses for which
+Python may be less suitable.
+As Python is an interpreted programming language, in general most Python code
+will run substantially slower than code written in a compiled language like Java or
+C++. As programmer time is often more valuable than CPU time, many are happy to
+make this trade-off. However, in an application with very low latency or demanding
+1.2 Why Python for Data Analysis? | 3
+resource utilization requirements (e.g., a high-frequency trading system), the time
+spent programming in a lower-level (but also lower-productivity) language like C++
+to achieve the maximum possible performance might be time well spent.
+Python can be a challenging language for building highly concurrent, multithreaded
+applications, particularly applications with many CPU-bound threads. The reason for
+this is that it has what is known as the global interpreter lock (GIL), a mechanism that
+prevents the interpreter from executing more than one Python instruction at a time.
+The technical reasons for why the GIL exists are beyond the scope of this book. While
+it is true that in many big data processing applications, a cluster of computers may be
+required to process a dataset in a reasonable amount of time, there are still situations
+where a single-process, multithreaded system is desirable.
+This is not to say that Python cannot execute truly multithreaded, parallel code.
+Python C extensions that use native multithreading (in C or C++) can run code in
+parallel without being impacted by the GIL, as long as they do not need to regularly
+interact with Python objects.
