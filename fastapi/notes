@@ -1,0 +1,17 @@
+Path Parameters
+Path parameters are part of the URL path itself. They are used to identify a specific resource. Think of them as the "ID" or the address of a particular item.
+
+Syntax: /users/{userId} or /products/{productId}
+
+Example: https://api.example.com/users/123
+
+Use Case: When the data is essential to locating the resource. If you remove a path parameter, the URL usually points to a different endpoint or becomes invalid.
+
+Query Parameters
+Query parameters appear after a question mark (?) at the end of the URL. They are used to sort, filter, or search through resources. They do not identify the resource itself, but rather define how it should be presented or filtered.
+
+Syntax: /users?key=value&key2=value2
+
+Example: https://api.example.com/users?sort=desc&limit=10
+
+Use Case: When the data is optional or used for modification of the results. The resource (the list of users) remains the same, but the query parameters change how many you see or what order they are in.
